@@ -5,13 +5,16 @@ public class main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scnr = new Scanner(System.in);
+		Scanner scnrAns = new Scanner(System.in);
 		
 		int input;
 		String name;
+		boolean ans = true;
 		
 		System.out.print("Enter name here: ");
 		name = scnr.nextLine();
 		
+		while(ans) {
 		System.out.print(name + " please enter a integer between 1 and 100: ");
 		input = scnr.nextInt();
 		
@@ -38,6 +41,10 @@ public class main {
 			else {
 				System.out.println(name + " your input " + input + " is odd.");
 			}
+		}
+		System.out.print("Would you like to try another number " + name +"?(y/n): ");
+		if(scnrAns.next().equalsIgnoreCase("n"))
+			ans = false;
 		}
 		System.out.println(name + " thank you for using Decision-Making Process. Goodbye.");
 		scnr.close();
